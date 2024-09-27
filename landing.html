@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page - Compre cursos para aumentar seu nível da Steam!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap">
+
+    <style>
+      /* Animação de fundo */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(-45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .header-img {
+        background: url(https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg) no-repeat center center;
+        background-size: cover;
+        height: 400px;
+      }
+
+      #compre {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4, #fa09e4, #fa2609, #09fad5, #f8f803, #0ef803);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: syncGradient 15s ease infinite; /* Sincronizado com o background */
+        text-align: center;
+        letter-spacing: 1.5px;
+        margin: 0;
+      }
+
+      @keyframes syncGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card img {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card .illustration-note {
+        font-size: 0.75rem;
+        color: #666;
+        margin-top: 10px;
+      }
+
+      .accordion-item {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .accordion-header {
+        background-color: #f8f9fa;
+      }
+
+      .accordion-button {
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 15px;
+      }
+
+      .form-control {
+        border-radius: 15px;
+        padding: 10px;
+        font-size: 0.9rem;
+        box-shadow: none;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      .form-label {
+        font-size: 0.85rem;
+        color: #ffffff;
+      }
+
+      .form-section {
+        background: rgba(49, 47, 47, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-primary {
+        border-radius: 15px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        background-color: #222;
+        color: #ddd;
+        padding: 50px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      footer p, footer h5 {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #ffffff;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .about-section {
+        text-align: center;
+        padding: 30px;
+        font-size: 0.9rem;
+        background-color: #333;
+        color: #ddd;
+        margin-bottom: 30px;
+      }
+
+      .about-section h5 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      .about-section p {
+        margin: 0;
+        line-height: 1.6;
+      }
+      #pagamento{
+        color: black;
+      }
+      .form-label1{
+        font-size: 0.85rem;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Player de música -->
+    <audio autoplay loop>
+      <source src="Meatball Parade.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Header -->
+    <header class="header-img text-white text-center d-flex align-items-center justify-content-center">
+      <h1 id="compre">Compre cursos para aumentar seu nível da Steam!</h1>
+    </header>
+
+    <!-- Contas da Steam -->
+    <section class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="contalvl10.png" class="card-img-top" alt="Conta Nível 10">
+            <div class="card-body">
+              <h5 class="card-title">Nível 10</h5>
+              <p class="card-text">Curso básico e mais barato!</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-level="10">Comprar</button>
+              <p class="illustration-note">Imagens meramente ilustrativas</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="contalvl50.png" class="card-img-top" alt="Conta Nível 50">
+            <div class="card-body">
+              <h5 class="card-title">Nível 50</h5>
+              <p class="card-text">Curso com o melhor custo-benefício!</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-level="50">Comprar</button>
+              <p class="illustration-note">Imagens meramente ilustrativas</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="contalvl100.png" class="card-img-top" alt="Conta Nível 100">
+            <div class="card-body">
+              <h5 class="card-title">Nível 100</h5>
+              <p class="card-text">Curso para nerds!</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-level="100">Comprar</button>
+              <p class="illustration-note">Imagens meramente ilustrativas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compra -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="purchaseModalLabel">Formulário de Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="purchaseForm" action="" method="POST">
+              <div class="mb-3">
+                <label for="accountType" class="form-label1">Conta Selecionada</label>
+                <input type="text" class="form-control" id="accountType" name="accountType" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label1">Nome</label>
+                <input type="text" class="form-control" id="pagamento" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label1">Sobrenome</label>
+                <input type="text" class="form-control" id="pagamento" name="lastName" required>
+              </div>
+              <div class="mb-3">
+                <label for="cpf" class="form-label1">CPF</label>
+                <input type="text" class="form-control" id="pagamento" name="cpf" required>
+              </div>
+              <div class="mb-3">
+                <label for="cep" class="form-label1">CEP</label>
+                <input type="text" class="form-control" id="pagamento" name="cep" required>
+              </div>
+              <div class="mb-3">
+                <label for="paymentMethod" class="form-label1">Forma de Pagamento</label>
+                <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                  <option value="creditCard">Cartão de Crédito</option>
+                  <option value="boleto">Boleto Bancário</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer com Sobre Nós e Contato -->
+    <footer>
+      <div class="container">
+        <!-- Sobre Nós -->
+        <div class="about-section">
+          <h5>Sobre Nós</h5>
+          <p>Somos uma empresa especializada em oferecer ajuda para subir o nível de contas da Steam para todos os tipos de jogadores. Com anos de experiência, garantimos a melhor segurança e satisfação para nossos clientes.</p>
+        </div>
+
+        <!-- Contato -->
+        <h5>Entre em Contato</h5>
+        <form id="contactForm" class="my-4">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="contactName" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="contactEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="contactMessage" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <p>&copy; 2024 - Sua Empresa de Cursos Steam. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      var purchaseModal = document.getElementById('purchaseModal');
+      purchaseModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var accountLevel = button.getAttribute('data-level');
+        var modalInput = document.getElementById('accountType');
+        modalInput.value = 'Conta Nível ' + accountLevel;
+      });
+    </script>
+  </body>
+</html>
